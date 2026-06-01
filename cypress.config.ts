@@ -12,14 +12,7 @@ export default defineConfig({
     devServer: {
       framework: 'react',
       bundler: 'vite',
-      viteConfig: {
-        optimizeDeps: {
-          esbuildOptions: {
-            target: 'es2020',
-          },
-        },
-      },
-      indexHtmlFile: 'index.html',
+      indexHtmlFile: 'cypress/support/component-index.html',
     },
     supportFile: 'cypress/support/component.ts',
   },
