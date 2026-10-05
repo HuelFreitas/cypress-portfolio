@@ -20,13 +20,22 @@
   "type": "commonjs",
   "private": true,
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
     "@cypress/react": "^9.0.2",
     "@types/node": "^25.9.1",
     "@vitejs/plugin-react": "^4.3.4",
-    "cypress": "^13.15.2",
+    "cypress": "^13.17.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.4.5",
     "vite": "^5.4.19"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/[filepath].{js,mjs,ts,tsx}",
+      "cypress/e2e/[filepath]/**/*.{js,mjs,ts,tsx}",
+      "cypress/support/step_definitions/**/*.{js,mjs,ts,tsx}"
+    ]
   }
 }

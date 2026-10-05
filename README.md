@@ -21,14 +21,14 @@ Demonstrar abordagem de QA para cenários críticos com foco em:
 - **Custom Commands**: abstraem fluxos repetitivos para reduzir duplicação
   - `cy.loginTheInternet(username, password)`
   - `cy.addFirstBookToCart()`
+- **BDD/Gherkin**: cenários legíveis em `cypress/e2e/features/*.feature` com steps em `cypress/e2e/step_definitions/`
 
 ## Cenários implementados
-- `cypress/e2e/login.cy.ts`
+- `cypress/e2e/features/login.feature`
   - login com credenciais válidas
-  - validação de erro com credenciais inválidas
-- `cypress/e2e/checkout.second-target.cy.ts`
-  - navegação para catálogo
-  - adição de item ao carrinho
+  - login com credenciais inválidas
+- `cypress/e2e/features/checkout.feature`
+  - adição do primeiro livro ao carrinho
 - `cypress/e2e/api.cy.ts`
   - status code
   - validação de contrato básico da resposta
@@ -67,7 +67,12 @@ npm run cy:run:ct
 
 Rodar um spec específico:
 ```bash
-npx cypress run --spec cypress/e2e/login.cy.ts
+npx cypress run --spec cypress/e2e/api.cy.ts
+```
+
+Rodar um cenário BDD específico:
+```bash
+npx cypress run --spec cypress/e2e/features/login.feature
 ```
 
 ## CI
